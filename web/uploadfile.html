@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue-Learning</title>
+        <style>
+            .login {
+                display: flex;
+                flex-direction: column;
+                border: 5px solid #f9f9f9;
+                border-radius: 10px;
+                background-color: #f0f0f0;
+                padding: 10px;
+                margin-top: 10px;
+                margin-left: 20px;
+                width: 300px;
+            }
+            input:active {
+                border: 1px solid blueviolet;
+            }
+            .login input[type="text"], input[type="password"] {
+                background-color: #ffffff;
+                border: none;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: medium;
+                font-weight: 600;
+                color: #666666;
+                flex: 1;
+            }
+            .login div {
+                margin-bottom: .5em;
+            }
+            .login label {
+                display: inline-block;
+                width: 50px;
+                font-weight: 900;
+            }
+
+            .login button[type="submit"] {
+                width:100%;
+                background-color: aquamarine;
+                border: none;
+                margin-top: 10px;
+                padding: 10px;
+                font-size: medium;
+                font-weight: 600;
+                color: #000000;
+            }
+            .login h2 {
+                text-align: center;
+                margin: 0 0 10px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form class="login" action="/upload" method="post" enctype="multipart/form-data">
+            <h2>上传附件</h2>
+            <div>
+                <label>附件类型</label>
+                <input type="text" name="filetype"/>
+            </div>
+            <div>
+                <label>附件</label>
+                <input type="file" name="filepath"/>
+            </div>
+            <input type="hidden" name="token" value="{{.}}"/>
+            <div><button type="submit">上传</button></div>
+        </form>
+    </body>
+</html>
